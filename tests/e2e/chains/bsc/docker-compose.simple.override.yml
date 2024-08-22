@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  toki-eth-bsc-rpc:
+    depends_on:
+      toki-eth-bootstrap-simple:
+        condition: service_completed_successfully
+
+  toki-eth-bsc-validator1:
+    depends_on:
+      toki-eth-bootstrap-simple:
+        condition: service_completed_successfully
+  toki-eth-bsc-validator2:
+    depends_on:
+      toki-eth-bootstrap-simple:
+        condition: service_completed_successfully
+  toki-eth-bsc-validator3:
+    depends_on:
+      toki-eth-bootstrap-simple:
+        condition: service_completed_successfully
+  toki-eth-bsc-validator4:
+    depends_on:
+      toki-eth-bootstrap-simple:
+        condition: service_completed_successfully
