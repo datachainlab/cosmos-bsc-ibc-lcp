@@ -3,6 +3,7 @@ RLY_BIN ?= ../../../../bin/yrly
 .PHONY: network
 network:
 	$(MAKE) -C ../../chains/tendermint network
+	$(MAKE) -C ../../chains/bsc bootstrap
 	$(MAKE) -C ../../chains/bsc network
 	sleep 10
 	$(MAKE) -C ../../chains/bsc deploy extract-abi
