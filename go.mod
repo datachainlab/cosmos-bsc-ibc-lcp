@@ -240,3 +240,8 @@ require (
 
 // See https://github.com/prysmaticlabs/grpc-gateway/issues/2
 replace github.com/grpc-ecosystem/grpc-gateway/v2 => github.com/prysmaticlabs/grpc-gateway/v2 v2.3.1-0.20230315201114-09284ba20446
+
+// avoid go-ethereum@v1.13.15/ethdb/pebble/pebble.go:592:21: assignment mismatch: 4 variables but reader.Next returns 5 values
+// https://github.com/ethereum/go-ethereum/blob/v1.13.15/go.mod#L16
+// https://github.com/cosmos/cosmos-db/blob/v1.0.2/go.mod#L6
+replace github.com/cockroachdb/pebble => github.com/cockroachdb/pebble v0.0.0-20230928194634-aa077af62593
