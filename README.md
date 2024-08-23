@@ -1,8 +1,8 @@
 # cosmos-bsc-ibc-lcp
 
 ## Pre-requisites
-* [Intel SGX SDK 2.19 or above]()
-* [LCP 0.2.29]()
+* [Intel SGX SDK 2.19](https://github.com/intel/linux-sgx/tree/sgx_2.19/sdk)
+- [lcp v0.2.9](https://github.com/datachainlab/lcp/releases/tag/v0.2.9)
 
 ### Quick installation
 ```sh
@@ -21,7 +21,7 @@ cp ./bin/lcp /usr/local/bin/
 ### SGX HW mode(default)
 
 ```
-$ make all yrly prepare-contracts build-images
+$ make all yrly build-images prepare-contracts 
 $ make e2e-test
 ```
 
@@ -29,6 +29,6 @@ $ make e2e-test
 
 ```
 $ export SGX_MODE=SW
-$ make all yrly prepare-contracts build-images
+$ make all yrly build-images prepare-contracts 
 $ make e2e-test
 ```

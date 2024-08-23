@@ -135,7 +135,7 @@ $(Signed_RustEnclave_Name): $(RustEnclave_Name)
 
 .PHONY: enclave
 enclave:
-	@cd enclave && RUSTFLAGS=$(RUSTFLAGS) cargo build $(CARGO_TARGET) $(CARGO_FEATURES)
+	@cd enclave && RUSTFLAGS=$(RUSTFLAGS) BSC_BLOCKS_PER_EPOCH=20 cargo build $(CARGO_TARGET) $(CARGO_FEATURES)
 	@mkdir -p ./lib
 	@cp enclave/target/$(OUTPUT_PATH)/libproxy_enclave.a ./lib/libenclave.a
 
