@@ -5,7 +5,7 @@ network:
 	$(MAKE) -C ../../chains/tendermint network
 	$(MAKE) -C ../../chains/bsc bootstrap
 	$(MAKE) -C ../../chains/bsc network
-	sleep 10
+	sleep 30
 	$(MAKE) -C ../../chains/bsc deploy extract-abi
 
 .PHONY: network-down

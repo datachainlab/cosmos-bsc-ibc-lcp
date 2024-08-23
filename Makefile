@@ -171,4 +171,5 @@ build-images:
 
 .PHONY: e2e-test
 e2e-test: $(Signed_RustEnclave_Name) yrly
+	source ${SGX_SDK}/environment
 	LCP_BIN=$(LCP_BIN) ./tests/e2e/scripts/run_e2e_test.sh
