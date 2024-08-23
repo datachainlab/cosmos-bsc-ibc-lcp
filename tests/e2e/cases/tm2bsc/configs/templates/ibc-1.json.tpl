@@ -34,14 +34,12 @@
   "prover": {
     "@type": "/relayer.provers.lcp.config.ProverConfig",
     "origin_prover": {
-      "@type": "/relayer.provers.ethereum_light_client.config.ProverConfig",
-      "beacon_endpoint": "http://localhost:19596",
-      "network": "minimal",
-      "trusting_period": "168h",
+      "@type": "/relayer.provers.parlia.config.ProverConfig",
+      "trusting_period": "86400s",
       "max_clock_drift": "0",
       "refresh_threshold_rate": {
-        "numerator": 2,
-        "denominator": 3
+        "numerator": 1,
+        "denominator": 2
       }
     },
     "lcp_service_address": "localhost:50051",
