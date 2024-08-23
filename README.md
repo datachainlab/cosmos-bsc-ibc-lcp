@@ -19,7 +19,6 @@ cp ./bin/lcp /usr/local/bin/
 ## Build enclave and run E2E test
 
 Set SGX environment
-
 ```
 source /opt/sgxsdk/environment
 ```
@@ -29,6 +28,7 @@ source /opt/sgxsdk/environment
 ```
 $ make all yrly build-images prepare-contracts 
 $ make e2e-test
+$ make down
 ```
 
 ### SGX SW mode
@@ -37,4 +37,5 @@ $ make e2e-test
 $ export SGX_MODE=SW
 $ make all yrly build-images prepare-contracts 
 $ make e2e-test
+$ make down
 ```

@@ -144,6 +144,11 @@ clean:
 	@rm -f $(RustEnclave_Name) $(Signed_RustEnclave_Name) enclave/*_t.* lib/*.a
 	@cd enclave && cargo clean && rm -f Cargo.lock
 
+.PHONY: down
+shutdown:
+	make -C ./tests/e2e/cases/tm2bsc network-down
+	ps -ef | grep lcp | head -n 1 | cut -d" " -f2 | xargs kill
+
 .PHONY: fmt
 fmt:
 	@cargo fmt --all && cd ./enclave && cargo fmt --all
