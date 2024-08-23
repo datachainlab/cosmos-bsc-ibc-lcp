@@ -13,16 +13,6 @@ while [ "$i" -lt ${account_cnt} ]; do
 done
 
 ETHSTATS=""
-if [ $ENABLED_ETHSTATS = "true" ]; then
-	ETHSTATS="--ethstats ${NODE_ID}:${NETSTATS_URL}"
-fi
 geth --config ${DATA_DIR}/config.toml --datadir ${DATA_DIR} --netrestrict ${CLUSTER_CIDR} \
-  --state.scheme=hash \
-  --db.engine=leveldb \
-	--gcmode archive \
-	--verbosity ${VERBOSE} --nousb ${ETHSTATS} \
-	--log.debug \
-	--log.vmodule=rpc/*=5 \
-	--unlock ${unlock_sequences} \
-	--password /dev/null \
-	--http.corsdomain=* --override.fixedturnlength 2
+	--state.scheme=hash --db.engine=leveldb --verbosity ${VERBOSE} --nousb ${ETHSTATS} \
+	--unlock ${unlock_sequences} --password /dev/null --ipcpath /gethipc --override.fixedturnlength 2

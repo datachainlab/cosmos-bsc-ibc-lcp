@@ -10,20 +10,10 @@ HOST_IP=$(hostname -i)
 echo "validator id: ${HOST_IP}"
 
 ETHSTATS=""
-if [ $ENABLED_ETHSTATS = "true" ]; then
-	ETHSTATS="--ethstats ${NODE_ID}:${NETSTATS_URL}"
-fi
 geth --config ${DATA_DIR}/config.toml --datadir ${DATA_DIR} --netrestrict ${CLUSTER_CIDR} \
-  --state.scheme=hash \
-  --db.engine=leveldb \
-  --gcmode archive \
-	--verbosity ${VERBOSE} ${ETHSTATS} \
+	--verbosity ${VERBOSE} --nousb ${ETHSTATS} --state.scheme=hash --db.engine=leveldb \
 	--bootnodes enode://${BOOTSTRAP_PUB_KEY}@${BOOTSTRAP_IP}:${BOOTSTRAP_TCP_PORT} \
-	--mine \
-	--miner.etherbase=${VALIDATOR_ADDR} \
-	--unlock ${VALIDATOR_ADDR} \
-	--password /dev/null \
-	--blspassword /scripts/wallet_password.txt \
+	--mine --miner.etherbase=${VALIDATOR_ADDR} -unlock ${VALIDATOR_ADDR} --password /dev/null --blspassword /scripts/wallet_password.txt \
 	--light.serve 50 --pprof.addr 0.0.0.0 --metrics \
-	--rpc.allow-unprotected-txs --history.transactions 15768000 \
-	--pprof --ipcdisable --vote --override.fixedturnlength 2
+	--rpc.allow-unprotected-txs  --history.transactions 15768000 \
+	--pprof --ipcpath /gethipc --vote --override.fixedturnlength 2
