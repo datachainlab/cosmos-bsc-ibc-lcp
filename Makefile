@@ -154,7 +154,7 @@ docker:
 
 .PHONY: yrly
 yrly:
-	go build -o ./bin/yrly -tags customcert ./relayer
+	go build -ldflags="-X github.com/datachainlab/ibc-parlia-relay/module/constant.blocksPerEpoch=20" -o ./bin/yrly -tags "dev customcert" ./relayer
 
 ######## E2E test ########
 
