@@ -19,8 +19,8 @@ ${LCP_BIN} --log_level=info service start --enclave=${ENCLAVE_PATH} --address=12
 LCP_PID=$!
 
 make -C tests/e2e/cases/tm2bsc network
-# wait until first finality_update is built
-retry 20 curl -fsL http://localhost:19596/eth/v1/beacon/light_client/finality_update -o /dev/null -w '%{http_code}\n'
+
+sleep 60
 
 ./tests/e2e/cases/tm2bsc/scripts/gen_rly_config.sh
 
