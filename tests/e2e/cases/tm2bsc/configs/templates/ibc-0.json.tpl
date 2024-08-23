@@ -29,14 +29,14 @@
     "message_aggregation": true,
     "is_debug_enclave": true,
     "operators": [
-      "0x8b071c864e323835eeff4ea887f5065ef50fb5e2"
+      "0xcb96F8d6C2d543102184d679D7829b39434E4EEc"
     ],
     "operator_signer": {
       "@type": "/relayer.provers.lcp.signers.raw.SignerConfig",
       "private_key": "0x99b107441d0bce8e5b0078450f10f309910d8c0a2cc91671bd6cc1a284809642"
     },
     "operators_eip712_evm_chain_params": {
-      "chain_id": 15,
+      "chain_id": 9999,
       "verifying_contract_address": $LC_ADDRESS
     }
   }
