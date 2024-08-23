@@ -7,7 +7,7 @@ UPDATE_CMD="${RLY} lcp update-operators ibc01"
 for IS_SRC in true false; do
   echo "src=${IS_SRC}"
   if [ "${IS_SRC}" = true ]; then
-    NEW_OPERATOR=0xcb96F8d6C2d543102184d679D7829b39434E4EEc
+    NEW_OPERATOR=0x8b071c864e323835eeff4ea887f5065ef50fb5e2
   else
     NEW_OPERATOR=0x9722414d09f43fb02235d739B50F4C027F43e657
   fi

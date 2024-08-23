@@ -18,6 +18,12 @@ cp ./bin/lcp /usr/local/bin/
 
 ## Build enclave and run E2E test
 
+Set SGX environment
+
+```
+source /opt/sgxsdk/environment
+```
+
 ### SGX HW mode(default)
 
 ```

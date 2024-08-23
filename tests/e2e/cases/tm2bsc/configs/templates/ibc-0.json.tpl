@@ -29,7 +29,7 @@
     "message_aggregation": true,
     "is_debug_enclave": true,
     "operators": [
-      "0xcb96F8d6C2d543102184d679D7829b39434E4EEc"
+      "0x8b071c864e323835eeff4ea887f5065ef50fb5e2"
     ],
     "operator_signer": {
       "@type": "/relayer.provers.lcp.signers.raw.SignerConfig",
