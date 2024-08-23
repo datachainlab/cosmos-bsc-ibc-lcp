@@ -145,7 +145,7 @@ clean:
 	@cd enclave && cargo clean && rm -f Cargo.lock
 
 .PHONY: down
-shutdown:
+down:
 	make -C ./tests/e2e/cases/tm2bsc network-down
 	ps -ef | grep lcp | head -n 1 | cut -d" " -f2 | xargs kill
 
