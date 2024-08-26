@@ -4,7 +4,7 @@ go 1.21
 
 require (
 	github.com/datachainlab/ethereum-ibc-relay-chain v0.3.4
-	github.com/datachainlab/ibc-parlia-relay v0.3.1
+	github.com/datachainlab/ibc-parlia-relay v0.3.2
 	github.com/datachainlab/lcp-go v0.2.10
 	github.com/hyperledger-labs/yui-relayer v0.5.4
 )

@@ -416,8 +416,8 @@ github.com/danieljoos/wincred v1.1.2 h1:QLdCxFs1/Yl4zduvBdcHB8goaYk9RARS2SgLLRuA
 github.com/danieljoos/wincred v1.1.2/go.mod h1:GijpziifJoIBfYh+S7BbkdUTU4LfM+QnGqR5Vl2tAx0=
 github.com/datachainlab/ethereum-ibc-relay-chain v0.3.4 h1:2mbvy6W/lm11SeQBgj1100A6D/70Wk9DooMoZfE8oXU=
 github.com/datachainlab/ethereum-ibc-relay-chain v0.3.4/go.mod h1:PdSsegkRJiMWVGq+afDtXKRKg4p8hnmR1Yj5BgXkit0=
-github.com/datachainlab/ibc-parlia-relay v0.3.1 h1:u4f8+Z6uIIneIEHyITOkOEs10NLXD5CslCvUrPRpDRo=
-github.com/datachainlab/ibc-parlia-relay v0.3.1/go.mod h1:rlK3Ak2E3z2Qu6ilPcf81pYChAW0HqSXHvt/vqA3ztE=
+github.com/datachainlab/ibc-parlia-relay v0.3.2 h1:SpZrCifbkpCf2uIKYfVZJx3AjEHD2gEYdeY+bL9trvU=
+github.com/datachainlab/ibc-parlia-relay v0.3.2/go.mod h1:rlK3Ak2E3z2Qu6ilPcf81pYChAW0HqSXHvt/vqA3ztE=
 github.com/datachainlab/lcp-go v0.2.10 h1:1c8C+HR+tC/4NjCjpuz+Nkk3I/uIQ3PNRcvJKsSU948=
 github.com/datachainlab/lcp-go v0.2.10/go.mod h1:0ivRb4qUiZz5UQxsbRKygQyFz0XC6TIC6YpEUdOc1So=
 github.com/davecgh/go-spew v0.0.0-20171005155431-ecdeabc65495/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
