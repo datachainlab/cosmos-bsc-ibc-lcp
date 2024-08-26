@@ -14,45 +14,65 @@ This project is related to the [cosmos-ethereum-ibc-lcp](https://github.com/data
 - [ethereum-ibc-relay-chain v0.3.4](https://github.com/datachainlab/ethereum-ibc-relay-chain/releases/tag/v0.3.4)
 - [ibc-parlia-relay v0.3.2](https://github.com/datachainlab/ibc-parlia-relay/releases/tag/v0.3.2)
 
-## Pre-requisites
+## How to build
+
+### Software Mode
+
+#### Pre-requisites
 
 The following components should be installed in the environment.
 
-* [Intel SGX SDK 2.19](https://github.com/intel/linux-sgx/tree/sgx_2.19/sdk)
-* [lcp v0.2.9](https://github.com/datachainlab/lcp/releases/tag/v0.2.9)
+* Intel SGX SDK  
+  Install according to [manual](https://https://github.com/intel/linux-sgx/tree/sgx_2.19) or use provided packages.
+  ```sh
+  curl -LO https://download.01.org/intel-sgx/sgx-linux/2.19/distro/ubuntu22.04-server/sgx_linux_x64_sdk_2.19.100.3.bin
+  chmod +x sgx_linux_x64_sdk_2.19.100.3.bin
+  echo -e 'no\n/opt' | ./sgx_linux_x64_sdk_2.19.100.3.bin
+  ```
+* LCP
+  ```sh
+  git clone https://github.com/datachainlab/lcp.git -b v0.2.9
+  cd lcp
+  export SGX_MODE=SW 
+  source /opt/sgxsdk/environment && make -B
+  cp ./bin/lcp /usr/local/bin/
+  ```
 
-### Quick installation
-```sh
-curl -LO https://download.01.org/intel-sgx/sgx-linux/2.19/distro/ubuntu22.04-server/sgx_linux_x64_sdk_2.19.100.3.bin
-chmod +x sgx_linux_x64_sdk_2.19.100.3.bin
-echo -e 'no\n/opt' | ./sgx_linux_x64_sdk_2.19.100.3.bin
-
-git clone https://github.com/datachainlab/lcp.git -b v0.2.9
-cd lcp
-source /opt/sgxsdk/environment && make -B
-cp ./bin/lcp /usr/local/bin/
-```
-
-## Build enclave and run E2E test
-
-Set SGX environment
-```
-source /opt/sgxsdk/environment
-```
-
-### SGX HW mode(default)
-
-```
-$ make all yrly build-images prepare-contracts 
-$ make e2e-test
-$ make down
-```
-
-### SGX SW mode
+#### Build enclave and run E2E test
 
 ```
 $ export SGX_MODE=SW
+$ source /opt/sgxsdk/environment
 $ make all yrly build-images prepare-contracts 
 $ make e2e-test
 $ make down
+```
+
+## Hardware Mode
+
+* Intel SGX SDK  
+* Intel SGX PSW
+* LCP
+  ```sh
+  git clone https://github.com/datachainlab/lcp.git -b v0.2.9
+  cd lcp
+  source /opt/sgxsdk/environment && make -B
+  cp ./bin/lcp /usr/local/bin/
+  ```
+
+#### Build enclave and run E2E test
+
+```
+$ source /opt/sgxsdk/environment
+$ make all yrly build-images prepare-contracts 
+$ make e2e-test
+$ make down
+```
+
+NOTE: if you run into the following error, you need to set `LD_LIBRARY_PATH` environment variable that include `libsgx_urts.so`.
+```
+lcp: error while loading shared libraries: libsgx_urts.so: cannot open shared object file: No such file or directory
+```
+```sh
+$ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/sgxsdk/lib64
 ```
