@@ -176,7 +176,7 @@ build-images:
 
 .PHONY: lcp
 lcp:
-	SGX_MODE=$(SGX_MODE) ./build-lcp.sh
+	SGX_MODE=$(SGX_MODE) ./build_lcp.sh
 
 .PHONY: e2e-test
 e2e-test: $(Signed_RustEnclave_Name) yrly
