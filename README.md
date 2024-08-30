@@ -2,8 +2,6 @@
 
 This is a cross-chain messaging demo between Cosmos and BSC using IBC and LCP (Light Client Proxy).
 
-This project is related to the [cosmos-ethereum-ibc-lcp](https://github.com/datachainlab/cosmos-ethereum-ibc-lcp).
-
 ## Supported Versions
 - [ibc-solidity v0.3.29](https://github.com/hyperledger-labs/yui-ibc-solidity/releases/tag/v0.3.29)
 - [lcp v0.2.9](https://github.com/datachainlab/lcp/releases/tag/v0.2.9)
@@ -18,24 +16,28 @@ This project is related to the [cosmos-ethereum-ibc-lcp](https://github.com/data
 
 The following components should be installed in the environment.
 
-* Intel SGX SDK  
-  Install according to the [manual](https://https://github.com/intel/linux-sgx).
-* LCP
-  ```sh
-  git clone https://github.com/datachainlab/lcp.git -b v0.2.9
-  cd lcp
-  export SGX_MODE=SW 
-  source /opt/sgxsdk/environment && make -B
-  cp ./bin/lcp /usr/local/bin/
-  ```
+* [Intel SGX SDK and PSW](https://github.com/intel/linux-sgx)
+* [lcp]((https://github.com/datachainlab/lcp/releases/tag/v0.2.9)
 
-### Build enclave and run E2E test
+## Build enclave and run E2E test
 
+### SGX HW mode(default)
 ```
-$ export SGX_MODE=SW
-$ source /opt/sgxsdk/environment
+$ make lcp
 $ make all yrly build-images prepare-contracts 
 $ make e2e-test
 $ make down
 ```
+
+### SGX SW mode
+
 ```
+$ export SGX_MODE=SW
+$ make lcp
+$ make all yrly build-images prepare-contracts 
+$ make e2e-test
+$ make down
+```
+
+## Related Projects
+ - [cosmos-ethereum-ibc-lcp](https://github.com/datachainlab/cosmos-ethereum-ibc-lcp).

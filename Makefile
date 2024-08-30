@@ -174,6 +174,10 @@ build-images:
 	make -C ./tests/e2e/chains/tendermint image
 	make -C ./tests/e2e/chains/bsc build
 
+.PHONY: lcp
+build-lcp:
+	SGX_MODE=$(SGX_MODE) ./build-lcp.sh
+
 .PHONY: e2e-test
 e2e-test: $(Signed_RustEnclave_Name) yrly
 	LCP_BIN=$(LCP_BIN) ./tests/e2e/scripts/run_e2e_test.sh
