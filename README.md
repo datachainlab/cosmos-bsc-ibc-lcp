@@ -14,10 +14,8 @@ This is a cross-chain messaging demo between Cosmos and BSC using IBC and LCP (L
 
 ## Pre-requisites
 
-The following components should be installed in the environment.
-
-* [Intel SGX SDK and PSW](https://github.com/intel/linux-sgx)
-* [lcp]((https://github.com/datachainlab/lcp/releases/tag/v0.2.9)
+[Intel SGX SDK and PSW](https://github.com/intel/linux-sgx) should be installed in the environment.
+ * PSW is unnecessary in SW mode. 
 
 ## Build enclave and run E2E test
 
@@ -33,6 +31,7 @@ $ make down
 
 ```
 $ export SGX_MODE=SW
+$ source /opt/sgxsdk/environment
 $ make lcp
 $ make all yrly build-images prepare-contracts 
 $ make e2e-test
