@@ -175,7 +175,7 @@ build-images:
 	make -C ./tests/e2e/chains/bsc build
 
 .PHONY: lcp
-build-lcp:
+lcp:
 	SGX_MODE=$(SGX_MODE) ./build-lcp.sh
 
 .PHONY: e2e-test
