@@ -122,10 +122,10 @@ async function main() {
   let rootCert;
   if (process.env.SGX_MODE === "SW") {
     console.log("RA simulation is enabled");
-    rootCert = fs.readFileSync("../config/simulation_rootca.der");
+    rootCert = fs.readFileSync("./config/simulation_rootca.der");
   } else {
     console.log("RA simulation is disabled");
-    rootCert = fs.readFileSync("../config/Intel_SGX_Attestation_RootCA.der");
+    rootCert = fs.readFileSync("./config/Intel_SGX_Attestation_RootCA.der");
   }
 
   // ethers is available in the global scope
