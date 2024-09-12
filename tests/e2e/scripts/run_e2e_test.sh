@@ -26,6 +26,8 @@ sleep 60
 
 make -C tests/e2e/cases/tm2bsc setup handshake
 
+make -C tests/e2e/cases/tm2bsc test-channel-upgrade
+
 # test for restore ELC state
 kill $LCP_PID
 ./tests/e2e/scripts/init_lcp.sh
