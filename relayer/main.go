@@ -5,7 +5,7 @@ import (
 	"os"
 
 	"github.com/datachainlab/ethereum-ibc-relay-chain/pkg/relay/ethereum"
-	"github.com/datachainlab/ethereum-ibc-relay-chain/pkg/relay/ethereum/signers/hd"
+	"github.com/datachainlab/ibc-hd-signer/pkg/hd"
 	parlia "github.com/datachainlab/ibc-parlia-relay/module"
 	lcp "github.com/datachainlab/lcp-go/relay"
 	rawsigner "github.com/datachainlab/lcp-go/relay/signers/raw"

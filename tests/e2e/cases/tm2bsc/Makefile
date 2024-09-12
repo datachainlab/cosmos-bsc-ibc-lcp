@@ -23,6 +23,10 @@ setup:
 handshake:
 	RLY_BIN=$(RLY_BIN) ./scripts/handshake
 
+.PHONY: test-channel-upgrade
+test-channel-upgrade:
+	RLY_BIN=$(RLY_BIN) ./scripts/test-channel-upgrade
+
 .PHONY: test
 test:
 	RLY_BIN=$(RLY_BIN) ./scripts/test-tx
