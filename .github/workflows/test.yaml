@@ -1,0 +1,26 @@
+name: test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-22.04
+    env:
+      SGX_MODE: SW
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: nightly
+      - run: curl -LO https://download.01.org/intel-sgx/sgx-linux/2.19/distro/ubuntu22.04-server/sgx_linux_x64_sdk_2.19.100.3.bin
+      - run: chmod +x ./sgx_linux_x64_sdk_2.19.100.3.bin
+      - run: echo -e 'no\n/opt' | ./sgx_linux_x64_sdk_2.19.100.3.bin
+      - run: source /opt/sgxsdk/environment && make lcp
+      - run: source /opt/sgxsdk/environment && make all yrly build-images prepare-contracts
+      - run: source /opt/sgxsdk/environment && make e2e-test
