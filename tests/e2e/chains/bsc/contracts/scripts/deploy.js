@@ -60,9 +60,9 @@ async function deployProxy(deployer, contractName, constructorArgs, unsafeAllow,
     redeployImplementation: 'always'
   };
   const proxyContract = await upgrades.deployProxy(
-      factory,
-      initialArgs ?? [],
-      proxyOptions
+    factory,
+    initialArgs ?? [],
+    proxyOptions
   );
   await proxyContract.waitForDeployment();
   return proxyContract.connect(deployer);
@@ -93,16 +93,20 @@ async function deployApp(deployer, ibcHandler) {
   const proxyV1 = await deployProxy(deployer, "AppV1", [ibcHandler.target], unsafeAllow, "__AppV1_init(string)", ["mockapp-1"]);
   saveAddress("AppV1", proxyV1);
 
-  for (let i = 2; i <= 7; i++) {
-    const contractName = `AppV${i}`;
-    const impl = await prepareImplementation(deployer, proxyV1, contractName, [ibcHandler.target], unsafeAllow);
-    saveAddress(contractName, impl);
+  if (process.env.USE_UPGRADE_TEST === 'yes') {
+    for (let i = 2; i <= 7; i++) {
+      const contractName = `AppV${i}`;
+      const impl = await prepareImplementation(deployer, proxyV1, contractName, [ibcHandler.target], unsafeAllow);
+      saveAddress(contractName, impl);
 
-    await proxyV1.proposeAppVersion(`mockapp-${i}`, {
-      implementation: impl.target,
-      initialCalldata: impl.interface.encodeFunctionData(`__${contractName}_init(string)`, [contractName]),
-      consumed: false,
-    }).then(tx => tx.wait());
+      await proxyV1.proposeAppVersion(`mockapp-${i}`, {
+	implementation: impl.target,
+	initialCalldata: impl.interface.encodeFunctionData(`__${contractName}_init(string)`, [contractName]),
+	consumed: false,
+      }).then(tx => tx.wait());
+    }
+  } else {
+    console.log(`You are skipping deployment of AppV2 to AppV7 since USE_UPGRADE_TEST=${process.env.USE_UPGRADE_TEST}`);
   }
 
   return proxyV1;
@@ -112,7 +116,7 @@ async function main() {
   // This is just a convenience check
   if (network.name === "hardhat") {
     console.warn(
-        "You are trying to deploy a contract to the Hardhat Network, which" +
+      "You are trying to deploy a contract to the Hardhat Network, which" +
         "gets automatically created and destroyed every time. Use the Hardhat" +
         " option '--network localhost'"
     );
@@ -131,8 +135,8 @@ async function main() {
   // ethers is available in the global scope
   const [deployer] = await hre.ethers.getSigners();
   console.log(
-      "Deploying the contracts with the account:",
-      await deployer.getAddress()
+    "Deploying the contracts with the account:",
+    await deployer.getAddress()
   );
   console.log("Account balance:", (await hre.ethers.provider.getBalance(deployer.getAddress())).toString());
 
@@ -157,11 +161,11 @@ async function main() {
 
 if (require.main === module) {
   main()
-      .then(() => process.exit(0))
-      .catch((error) => {
-        console.error(error);
-        process.exit(1);
-      });
+    .then(() => process.exit(0))
+    .catch((error) => {
+      console.error(error);
+      process.exit(1);
+    });
 }
 
 exports.deployIBC = deployIBC;
