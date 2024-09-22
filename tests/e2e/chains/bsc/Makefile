@@ -23,7 +23,7 @@ network-down:
 #------------------------------------------------------------------------------
 .PHONY:deploy
 deploy:
-	$(DOCKER_COMPOSE) run contracts $(HARDHAT) run ./scripts/deploy.js --network eth_local
+	$(DOCKER_COMPOSE) run -e USE_UPGRADE_TEST=$(USE_UPGRADE_TEST) contracts $(HARDHAT) run ./scripts/deploy.js --network eth_local
 
 .PHONY: dep
 dep:
