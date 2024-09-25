@@ -23,7 +23,7 @@ network-down:
 #------------------------------------------------------------------------------
 .PHONY:deploy
 deploy:
-	$(DOCKER_COMPOSE) run contracts $(HARDHAT) run ./scripts/deploy.js --network eth_local
+	$(DOCKER_COMPOSE) run -e USE_UPGRADE_TEST=$(USE_UPGRADE_TEST) contracts $(HARDHAT) run ./scripts/deploy.js --network eth_local
 
 .PHONY: dep
 dep:
@@ -32,6 +32,10 @@ dep:
 .PHONY: clean
 clean:
 	$(DOCKER_COMPOSE) run contracts sh -c '$(HARDHAT) clean && rm -rf node_modules && rm -f package-lock.json'
+
+.PHONY: rm-oz-upgrades
+rm-oz-upgrades:
+	$(DOCKER_COMPOSE) run contracts sh -c 'rm -rf .openzeppelin'
 
 .PHONY: extract-abi
 extract-abi:
