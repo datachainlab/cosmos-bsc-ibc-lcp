@@ -3,8 +3,8 @@
 This is a cross-chain messaging demo between Cosmos and BSC using IBC and LCP (Light Client Proxy).
 
 ## Supported Versions
-- [ibc-solidity v0.3.37](https://github.com/hyperledger-labs/yui-ibc-solidity/releases/tag/v0.3.37)
-- [lcp v0.2.10](https://github.com/datachainlab/lcp/releases/tag/v0.2.10)
+- [ibc-solidity v0.3.38](https://github.com/hyperledger-labs/yui-ibc-solidity/releases/tag/v0.3.38)
+- [lcp v0.2.11](https://github.com/datachainlab/lcp/releases/tag/v0.2.11)
 - [lcp-go v0.2.10](https://github.com/datachainlab/lcp-go/releases/tag/v0.2.10)
 - [lcp-solidity v0.1.15](https://github.com/datachainlab/lcp-solidity/releases/tag/v0.1.15)
 - [yui-relayer v0.5.8](https://github.com/hyperledger-labs/yui-relayer/releases/tag/v0.5.8)
