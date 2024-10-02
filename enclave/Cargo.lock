@@ -1233,7 +1233,7 @@ dependencies = [
 [[package]]
 name = "parlia-elc"
 version = "0.2.9"
-source = "git+https://github.com/datachainlab/parlia-elc?rev=v0.3.3#ce4988f8a5aa560174a86148d369d01975d187b4"
+source = "git+https://github.com/datachainlab/parlia-elc?rev=v0.3.4#78d134938e24b05b5faaee71c30e7eae2ca6c620"
 dependencies = [
  "elliptic-curve",
  "hex-literal",
@@ -1254,7 +1254,7 @@ dependencies = [
 [[package]]
 name = "parlia-ibc-proto"
 version = "0.2.0"
-source = "git+https://github.com/datachainlab/parlia-elc?rev=v0.3.3#ce4988f8a5aa560174a86148d369d01975d187b4"
+source = "git+https://github.com/datachainlab/parlia-elc?rev=v0.3.4#78d134938e24b05b5faaee71c30e7eae2ca6c620"
 dependencies = [
  "ibc-proto",
  "prost",
