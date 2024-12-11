@@ -40,7 +40,8 @@
       "refresh_threshold_rate": {
         "numerator": 1,
         "denominator": 2
-      }
+      },
+      "refreshBlockDifferenceThreshold": 10000
     },
     "lcp_service_address": "localhost:50051",
     "mrenclave": $MRENCLAVE,
