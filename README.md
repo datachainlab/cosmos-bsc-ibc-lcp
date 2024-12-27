@@ -5,12 +5,12 @@ This is a cross-chain messaging demo between Cosmos and BSC using IBC and LCP (L
 ## Supported Versions
 - [ibc-solidity v0.3.40](https://github.com/hyperledger-labs/yui-ibc-solidity/releases/tag/v0.3.40)
 - [lcp v0.2.12](https://github.com/datachainlab/lcp/releases/tag/v0.2.12)
-- [lcp-go v0.2.12](https://github.com/datachainlab/lcp-go/releases/tag/v0.2.12)
+- [lcp-go v0.2.13](https://github.com/datachainlab/lcp-go/releases/tag/v0.2.13)
 - [lcp-solidity v0.1.17](https://github.com/datachainlab/lcp-solidity/releases/tag/v0.1.17)
-- [yui-relayer v0.5.8](https://github.com/hyperledger-labs/yui-relayer/releases/tag/v0.5.8)
-- [ethereum-ibc-relay-chain v0.3.10](https://github.com/datachainlab/ethereum-ibc-relay-chain/releases/tag/v0.3.10)
-- [parlia-elc v0.3.6](https://github.com/datachainlab/parlia-elc/releases/tag/v0.3.6)
-- [ibc-parlia-relay v0.3.6](https://github.com/datachainlab/ibc-parlia-relay/releases/tag/v0.3.6)
+- [yui-relayer v0.5.10](https://github.com/hyperledger-labs/yui-relayer/releases/tag/v0.5.10)
+- [ethereum-ibc-relay-chain v0.3.13](https://github.com/datachainlab/ethereum-ibc-relay-chain/releases/tag/v0.3.13)
+- [parlia-elc v0.3.7](https://github.com/datachainlab/parlia-elc/releases/tag/v0.3.7)
+- [ibc-parlia-relay v0.3.8](https://github.com/datachainlab/ibc-parlia-relay/releases/tag/v0.3.8)
 
 ## Pre-requisites
 
