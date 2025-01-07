@@ -168,7 +168,7 @@ prepare-contracts:
 
 .PHONY: build-images
 build-images:
-	$(MAKE) -C ./tests/e2e/chains/tendermint image
+	$(MAKE) -C ./tests/e2e/chains/xion image
 	$(MAKE) -C ./tests/e2e/chains/bsc build
 
 .PHONY: e2e-test

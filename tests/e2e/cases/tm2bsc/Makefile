@@ -4,14 +4,14 @@ RLY_BIN ?= ../../../../bin/yrly
 network:
 	sleep 10
 	$(MAKE) -C ../../chains/bsc bootstrap
-	$(MAKE) -C ../../chains/tendermint network
+	$(MAKE) -C ../../chains/xion network
 	$(MAKE) -C ../../chains/bsc network
 	sleep 30
 	$(MAKE) -C ../../chains/bsc deploy extract-abi
 
 .PHONY: network-down
 network-down:
-	$(MAKE) -C ../../chains/tendermint network-down
+	$(MAKE) -C ../../chains/xion network-down
 	$(MAKE) -C ../../chains/bsc network-down
 
 .PHONY: setup
