@@ -541,6 +541,11 @@ func NewWasmApp(
 		authtypes.NewModuleAddress(govtypes.ModuleName).String(),
 	)
 
+	ibcAuthority := authtypes.NewModuleAddress(govtypes.ModuleName).String()
+	if authority, found := os.LookupEnv("IBC_AUTHORITY"); found && len(authority) > 0 {
+		ibcAuthority = authority
+	}
+
 	ibcKeeper := ibckeeper.NewKeeper(
 		appCodec,
 		keys[ibcexported.StoreKey],
@@ -548,7 +553,7 @@ func NewWasmApp(
 		app.StakingKeeper,
 		app.UpgradeKeeper,
 		scopedIBCKeeper,
-		authtypes.NewModuleAddress(govtypes.ModuleName).String(),
+		ibcAuthority,
 	)
 
 	// this is a workaround in case the counterparty chain uses mock-client

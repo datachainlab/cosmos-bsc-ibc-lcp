@@ -36,8 +36,8 @@ RUN set -eux; \
     bash
 
 # Set the workdir
-COPY . /xion/
-WORKDIR /xion
+COPY . /root/
+WORKDIR /root
 
 # Download go dependencies
 COPY go.mod go.sum ./
@@ -73,10 +73,10 @@ RUN --mount=type=cache,target=/root/.cache/go-build \
         make install; \
     fi
 
-WORKDIR /xion/app
+WORKDIR /root/app
 
 ARG CHAINID
-ARG CHAINDIR=/xion/data
+ARG CHAINDIR=/root/data
 ARG RPCPORT=26657
 ARG P2PPORT=26656
 ARG PROFPORT=6060
