@@ -36,6 +36,7 @@ ifeq ($(WITH_CLEVELDB),yes)
   build_tags += gcc
 endif
 build_tags += $(BUILD_TAGS)
+build_tags += customcert
 build_tags := $(strip $(build_tags))
 
 whitespace :=
@@ -49,7 +50,6 @@ ldflags = -X github.com/cosmos/cosmos-sdk/version.Name=xion \
 		  -X github.com/cosmos/cosmos-sdk/version.AppName=xiond \
 		  -X github.com/cosmos/cosmos-sdk/version.Version=$(VERSION) \
 		  -X github.com/cosmos/cosmos-sdk/version.Commit=$(COMMIT) \
-		  -X github.com/CosmWasm/wasmd/app.Bech32Prefix=xion \
 		  -X "github.com/cosmos/cosmos-sdk/version.BuildTags=$(build_tags_comma_sep)"
 
 ifeq ($(WITH_CLEVELDB),yes)
