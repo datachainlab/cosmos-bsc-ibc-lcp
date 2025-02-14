@@ -5,7 +5,7 @@ go 1.22.0
 require (
 	github.com/datachainlab/ethereum-ibc-relay-chain v0.3.13
 	github.com/datachainlab/ibc-hd-signer v0.1.1
-	github.com/datachainlab/ibc-parlia-relay v0.3.9-alpha
+	github.com/datachainlab/ibc-parlia-relay v0.3.9
 	github.com/datachainlab/lcp-go v0.2.13
 	github.com/hyperledger-labs/yui-relayer v0.5.10
 )
@@ -83,7 +83,7 @@ require (
 	github.com/dvsekhvalnov/jose2go v1.6.0 // indirect
 	github.com/emicklei/dot v1.6.1 // indirect
 	github.com/ethereum/c-kzg-4844 v1.0.0 // indirect
-	github.com/ethereum/go-ethereum v1.14.12 // indirect
+	github.com/ethereum/go-ethereum v1.15.0 // indirect
 	github.com/ethereum/go-verkle v0.2.2 // indirect
 	github.com/fatih/color v1.16.0 // indirect
 	github.com/felixge/httpsnoop v1.0.4 // indirect
@@ -244,5 +244,3 @@ replace github.com/grpc-ecosystem/grpc-gateway/v2 => github.com/prysmaticlabs/gr
 // https://github.com/ethereum/go-ethereum/blob/v1.13.15/go.mod#L16
 // https://github.com/cosmos/cosmos-db/blob/v1.0.2/go.mod#L6
 replace github.com/cockroachdb/pebble => github.com/cockroachdb/pebble v0.0.0-20230928194634-aa077af62593
-
-replace github.com/ethereum/go-ethereum v1.14.12 => github.com/ethereum/go-ethereum v1.15.0
