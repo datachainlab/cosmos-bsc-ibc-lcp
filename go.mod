@@ -5,7 +5,7 @@ go 1.22.0
 require (
 	github.com/datachainlab/ethereum-ibc-relay-chain v0.3.13
 	github.com/datachainlab/ibc-hd-signer v0.1.1
-	github.com/datachainlab/ibc-parlia-relay v0.3.9-alpha
+	github.com/datachainlab/ibc-parlia-relay v0.3.9
 	github.com/datachainlab/lcp-go v0.2.13
 	github.com/hyperledger-labs/yui-relayer v0.5.10
 )
@@ -83,7 +83,7 @@ require (
 	github.com/dvsekhvalnov/jose2go v1.6.0 // indirect
 	github.com/emicklei/dot v1.6.1 // indirect
 	github.com/ethereum/c-kzg-4844 v1.0.0 // indirect
-	github.com/ethereum/go-ethereum v1.14.12 // indirect
+	github.com/ethereum/go-ethereum v1.15.0 // indirect
 	github.com/ethereum/go-verkle v0.2.2 // indirect
 	github.com/fatih/color v1.16.0 // indirect
 	github.com/felixge/httpsnoop v1.0.4 // indirect
