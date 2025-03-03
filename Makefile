@@ -184,3 +184,7 @@ e2e-test: e2e-clean $(LCP_BIN) $(Signed_RustEnclave_Name) yrly
 .PHONY: e2e-clean
 e2e-clean:
 	$(MAKE) -C ./tests/e2e/chains/bsc rm-oz-upgrades
+
+.PHONY: xion2bsc-test
+xion2bsc-test: $(BSC_WASM_CODE) $(LCP_BIN) $(Signed_RustEnclave_Name) yrly
+	LCP_BIN=$(LCP_BIN) WASM_CODE=$(BSC_WASM_CODE) USE_UPGRADE_TEST=$(USE_UPGRADE_TEST) ./tests/e2e/scripts/run_xion2bsc_test.sh
