@@ -165,7 +165,7 @@ $(LCP_BIN):
 	$(MAKE) -C $(LCP_REPO)
 
 $(BSC_WASM_CODE):
-	cd ./parlia-ibc-cw && cargo wasm
+	cd ./parlia-ibc-cw && BSC_BLOCKS_PER_EPOCH=20 cargo wasm
 
 .PHONY: prepare-contracts
 prepare-contracts:
