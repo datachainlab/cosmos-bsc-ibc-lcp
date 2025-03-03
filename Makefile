@@ -175,6 +175,7 @@ prepare-contracts:
 build-images:
 	$(MAKE) -C ./tests/e2e/chains/tendermint image
 	$(MAKE) -C ./tests/e2e/chains/bsc build
+	$(MAKE) -C ./tests/e2e/chains/xion image
 
 .PHONY: e2e-test
 e2e-test: e2e-clean $(LCP_BIN) $(Signed_RustEnclave_Name) yrly
