@@ -420,6 +420,7 @@ github.com/datachainlab/ibc-hd-signer v0.1.1 h1:ws90eXVjjLcx2i6iPJu2bJ2w06tIeuSy
 github.com/datachainlab/ibc-hd-signer v0.1.1/go.mod h1:I1pas5LB8QupngqT05/h3u1nqhHww9OOnAwliuPEd3c=
 github.com/datachainlab/ibc-parlia-relay v0.3.9 h1:My4goEh/2RBVbb6/xFrZhfg99CmdgiYZsmEoUVBG0Vc=
 github.com/datachainlab/ibc-parlia-relay v0.3.9/go.mod h1:0zarxJyO75kj4cR6Ylf8ilUbJuvcFfXww8Ek0NjxoL4=
+github.com/datachainlab/ibc-parlia-relay v0.3.10-0.20250307092714-09781062234b/go.mod h1:0zarxJyO75kj4cR6Ylf8ilUbJuvcFfXww8Ek0NjxoL4=
 github.com/datachainlab/lcp-go v0.2.13 h1:zpjZ4blf//uVtSWv5bHOst5trmF7CvX7yygJK6WhFOE=
 github.com/datachainlab/lcp-go v0.2.13/go.mod h1:S/fUTQ4LtN6/D0NJv4DaEBH6qbZkdyBUQ+6jrNYJPjY=
 github.com/davecgh/go-spew v0.0.0-20171005155431-ecdeabc65495/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
