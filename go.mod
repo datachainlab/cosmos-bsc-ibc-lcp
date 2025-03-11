@@ -5,7 +5,7 @@ go 1.22.0
 require (
 	github.com/datachainlab/ethereum-ibc-relay-chain v0.3.13
 	github.com/datachainlab/ibc-hd-signer v0.1.1
-	github.com/datachainlab/ibc-parlia-relay v0.3.9-p1-rc1
+	github.com/datachainlab/ibc-parlia-relay v0.3.9-p1-rc2
 	github.com/datachainlab/lcp-go v0.2.13
 	github.com/hyperledger-labs/yui-relayer v0.5.10
 )
