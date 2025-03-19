@@ -41,7 +41,8 @@
         "numerator": 1,
         "denominator": 2
       },
-      "refreshBlockDifferenceThreshold": 10000
+      "refreshBlockDifferenceThreshold": 10000,
+      "network": "localnet"
     },
     "lcp_service_address": "localhost:50051",
     "mrenclave": $MRENCLAVE,
