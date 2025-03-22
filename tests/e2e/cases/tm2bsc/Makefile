@@ -1,4 +1,4 @@
-RLY_BIN ?= ../../../../bin/yrly
+RLY_BIN ?= LOCAL_LORENTZ_HF_TIMESTAMP=1742632255000 ../../../../bin/yrly
 
 .PHONY: network
 network:
