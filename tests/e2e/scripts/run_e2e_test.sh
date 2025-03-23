@@ -20,9 +20,9 @@ LCP_PID=$!
 
 make -C tests/e2e/cases/tm2bsc network
 
-# must wait 2 epoch ( 1.5 * 400 * 2)
+# must wait 2 epoch ( 3 * 400 )
 echo "wait 2 epoch"
-sleep 800
+sleep 1200
 
 ./tests/e2e/cases/tm2bsc/scripts/gen_rly_config.sh
 
