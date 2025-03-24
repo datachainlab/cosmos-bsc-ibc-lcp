@@ -40,6 +40,7 @@ ${LCP_BIN} --log_level=info service start --enclave=${ENCLAVE_PATH} --address=12
 LCP_PID=$!
 make -C tests/e2e/cases/tm2bsc restore
 
+sleep 1200
 make -C tests/e2e/cases/tm2bsc test
 make -C tests/e2e/cases/tm2bsc test-operators
 make -C tests/e2e/cases/tm2bsc network-down
