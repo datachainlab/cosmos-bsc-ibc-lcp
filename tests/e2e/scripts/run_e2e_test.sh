@@ -39,8 +39,7 @@ kill $LCP_PID
 ${LCP_BIN} --log_level=info service start --enclave=${ENCLAVE_PATH} --address=127.0.0.1:50051 --threads=2 &
 LCP_PID=$!
 
-# TODO ForkSpec height is required
-# make -C tests/e2e/cases/tm2bsc restore
+make -C tests/e2e/cases/tm2bsc restore
 
 make -C tests/e2e/cases/tm2bsc test
 make -C tests/e2e/cases/tm2bsc test-operators
