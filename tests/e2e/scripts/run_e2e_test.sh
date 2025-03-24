@@ -42,7 +42,6 @@ LCP_PID=$!
 # TODO ForkSpec height is required
 # make -C tests/e2e/cases/tm2bsc restore
 
-sleep 1200
 make -C tests/e2e/cases/tm2bsc test
 make -C tests/e2e/cases/tm2bsc test-operators
 make -C tests/e2e/cases/tm2bsc network-down
