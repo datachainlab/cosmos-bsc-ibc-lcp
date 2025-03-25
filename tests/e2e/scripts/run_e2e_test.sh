@@ -33,13 +33,12 @@ then
   make -C tests/e2e/cases/tm2bsc test-channel-upgrade
 fi
 
-# test for restore ELC state
-kill $LCP_PID
-./tests/e2e/scripts/init_lcp.sh
-${LCP_BIN} --log_level=info service start --enclave=${ENCLAVE_PATH} --address=127.0.0.1:50051 --threads=2 &
-LCP_PID=$!
-
 # TODO ForkSpec height is required
+# test for restore ELC state
+#kill $LCP_PID
+#./tests/e2e/scripts/init_lcp.sh
+#${LCP_BIN} --log_level=info service start --enclave=${ENCLAVE_PATH} --address=127.0.0.1:50051 --threads=2 &
+#LCP_PID=$!
 # make -C tests/e2e/cases/tm2bsc restore
 
 make -C tests/e2e/cases/tm2bsc test
