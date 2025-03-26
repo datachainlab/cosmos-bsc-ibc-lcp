@@ -157,7 +157,7 @@ yrly:
 LCP_REPO=./lcp
 LCP_BIN=$(LCP_REPO)/bin/lcp
 
-BSC_WASM_CODE=./parlia-ibc-cw/target/wasm32-unknown-unknown/release/parlia_ibc_cw.wasm
+BSC_WASM_CODE=./ibc-elc-client-cw/target/wasm32-unknown-unknown/release/ibc_parlia_client_cw.wasm
 
 USE_UPGRADE_TEST ?= no
 
@@ -165,7 +165,7 @@ $(LCP_BIN):
 	$(MAKE) -C $(LCP_REPO)
 
 $(BSC_WASM_CODE):
-	cd ./parlia-ibc-cw && BSC_BLOCKS_PER_EPOCH=20 cargo wasm
+	cd ./ibc-elc-client-cw && BSC_BLOCKS_PER_EPOCH=20 cargo wasm -p ibc-parlia-client-cw
 
 .PHONY: prepare-contracts
 prepare-contracts:
