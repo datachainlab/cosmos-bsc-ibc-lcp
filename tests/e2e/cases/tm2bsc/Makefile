@@ -1,5 +1,3 @@
-#export LOCAL_LORENTZ_HF_TIMESTAMP=1742825700000
-
 RLY_BIN ?= ../../../../bin/yrly
 
 .PHONY: network
