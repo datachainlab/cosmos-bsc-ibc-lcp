@@ -418,8 +418,8 @@ github.com/datachainlab/ethereum-ibc-relay-chain v0.3.17 h1:oyDLIbc9hyp31c3OoIB5
 github.com/datachainlab/ethereum-ibc-relay-chain v0.3.17/go.mod h1:sf+ti1uM1joxhukxIyj8oDQ5yf7d+e+nl+3vtn9f5CM=
 github.com/datachainlab/ibc-hd-signer v0.1.2 h1:fWAYjMBVyM390OllX/l58mZYA7we0spEBFLYKWYTwfw=
 github.com/datachainlab/ibc-hd-signer v0.1.2/go.mod h1:nwH0Z3TK/7jbu/oInGGWGRimQ+LCn6yvDyjMZrw9mR4=
-github.com/datachainlab/ibc-parlia-relay v0.3.15-rc1 h1:WLsTqcEHQVLlSONygCImwRWa9dFigaVsPzDwnl5pq7E=
-github.com/datachainlab/ibc-parlia-relay v0.3.15-rc1/go.mod h1:YkqwnY+1CFEeRe3aQmg053YSSkXK0sTeX39GUNN83d0=
+github.com/datachainlab/ibc-parlia-relay v0.3.15-rc2 h1:baJPeB6/k6fnc2YwXJStsukrGCaddH6Sk5q7CjIW7sI=
+github.com/datachainlab/ibc-parlia-relay v0.3.15-rc2/go.mod h1:YkqwnY+1CFEeRe3aQmg053YSSkXK0sTeX39GUNN83d0=
 github.com/datachainlab/lcp-go v0.2.15 h1:UOelDhvE0/2lzCjeBSFghUkBkq3YJhnQhaTf3EKSZNg=
 github.com/datachainlab/lcp-go v0.2.15/go.mod h1:AmdXcxocZ1/qH86GEHeQOxTozE+06lH3Fkgg+LsZJu0=
 github.com/davecgh/go-spew v0.0.0-20171005155431-ecdeabc65495/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
