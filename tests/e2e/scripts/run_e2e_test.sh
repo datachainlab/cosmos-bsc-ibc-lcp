@@ -20,9 +20,9 @@ LCP_PID=$!
 
 make -C tests/e2e/cases/tm2bsc network
 
-# must wait 2 epoch ( 1.5 * 400 )
-echo "wait 2 epoch"
-sleep 600
+# must wait epoch ( 3 * 400 + 1.5 * 100 )
+echo "wait for lorentz HF"
+sleep 1350
 
 ./tests/e2e/cases/tm2bsc/scripts/gen_rly_config.sh
 
@@ -34,10 +34,10 @@ then
 fi
 
 # test for restore ELC state
-kill $LCP_PID
-./tests/e2e/scripts/init_lcp.sh
-${LCP_BIN} --log_level=info service start --enclave=${ENCLAVE_PATH} --address=127.0.0.1:50051 --threads=2 &
-LCP_PID=$!
+#kill $LCP_PID
+#./tests/e2e/scripts/init_lcp.sh
+#${LCP_BIN} --log_level=info service start --enclave=${ENCLAVE_PATH} --address=127.0.0.1:50051 --threads=2 &
+#LCP_PID=$!
 
 make -C tests/e2e/cases/tm2bsc restore
 

@@ -1,3 +1,5 @@
+export LOCAL_LATEST_HF_TIMESTAMP=1744014300000
+
 RLY_BIN ?= ../../../../bin/yrly
 
 .PHONY: network
