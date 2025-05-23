@@ -20,8 +20,8 @@ LCP_PID=$!
 
 make -C tests/e2e/cases/tm2bsc network
 
-echo "wait 0.75s * 800block"
-sleep 600
+echo "wait over 0.75s * 3000"
+sleep 2250
 
 ./tests/e2e/cases/tm2bsc/scripts/gen_rly_config.sh
 
