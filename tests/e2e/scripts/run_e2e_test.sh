@@ -20,9 +20,8 @@ LCP_PID=$!
 
 make -C tests/e2e/cases/tm2bsc network
 
-# must wait epoch ( 3 * 400 + 1.5 * 100 )
-echo "wait for lorentz HF"
-sleep 1350
+echo "wait 0.75s * 800block"
+sleep 600
 
 ./tests/e2e/cases/tm2bsc/scripts/gen_rly_config.sh
 
