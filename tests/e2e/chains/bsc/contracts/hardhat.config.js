@@ -6,13 +6,32 @@ require("@openzeppelin/hardhat-upgrades");
  */
 module.exports = {
   solidity: {
-    version: "0.8.28",
-    settings: {
-      optimizer: {
-        enabled: true,
-        runs: 9_999_999
+    compilers: [
+      {
+        version: "0.8.28",
+        settings: {
+          evmVersion: "cancun",
+          viaIR: true,
+          optimizer: {
+            enabled: true,
+            runs: 9_999_999
+          }
+        }
       }
-    },
+    ],
+    overrides: {
+      "contracts/App.sol": {
+        version: "0.8.28",
+        settings: {
+          evmVersion: "cancun",
+          viaIR: false,
+          optimizer: {
+            enabled: true,
+            runs: 9_999_999
+          }
+        }
+      }
+    }
   },
   networks: {
     eth_local: {
