@@ -7,8 +7,9 @@ on:
   pull_request:
 
 jobs:
-  test:
-    runs-on: ubuntu-22.04
+  e2e-test:
+    runs-on:
+      labels: ubuntu-22.04
     env:
       SGX_MODE: SW
     steps:
