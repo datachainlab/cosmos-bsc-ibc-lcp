@@ -5,7 +5,7 @@ set -ex
 
 source $(cd $(dirname "$0"); pwd)/util
 
-E2E_TEST_DIR=./tests/e2e/cases/tm2eth
+E2E_TEST_DIR=./tests/e2e/cases/tm2bsc
 export NO_RUN_LCP=false
 export LCP_ENCLAVE_DEBUG=0
 export LCP_KEY_EXPIRATION=86400
