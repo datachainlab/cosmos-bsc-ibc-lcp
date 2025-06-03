@@ -30,7 +30,9 @@ jobs:
             ~/.cargo/registry/src/**/librocksdb-sys-*
       - name: Install SGX SDK
         run: |
-          sudo bash ./lcp/.github/scripts/install_sgx_sdk.sh /opt
+          curl -LO https://download.01.org/intel-sgx/sgx-linux/2.19/distro/ubuntu22.04-server/sgx_linux_x64_sdk_2.19.100.3.bin
+          chmod +x ./sgx_linux_x64_sdk_2.19.100.3.bin
+          echo -e 'no\n/opt' | ./sgx_linux_x64_sdk_2.19.100.3.bin
       - name: Run E2E test
         run: |
           source /opt/sgxsdk/environment
