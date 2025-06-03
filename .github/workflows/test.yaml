@@ -27,8 +27,6 @@ jobs:
             ./enclave
           cache-directories: |
             ~/.cargo/registry/src/**/librocksdb-sys-*
-      - name: Install Foundry
-        uses: foundry-rs/foundry-toolchain@v1
       - name: Install SGX SDK
         run: |
           sudo bash ./lcp/.github/scripts/install_sgx_sdk.sh /opt
