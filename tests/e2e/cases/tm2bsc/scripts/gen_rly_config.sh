@@ -17,7 +17,7 @@ fi
 TEMPLATE_DIR=${E2E_TEST_DIR}/configs/templates
 CONFIG_DIR=${E2E_TEST_DIR}/configs/demo
 
-ADDRESSES_DIR=./tests/e2e/chains/ethereum/contracts/addresses
+ADDRESSES_DIR=./tests/e2e/chains/bsc/contracts/addresses
 
 IBC_ADDRESS=$(cat $ADDRESSES_DIR/IBCHandler)
 LC_ADDRESS=$(cat $ADDRESSES_DIR/LCPClient)
