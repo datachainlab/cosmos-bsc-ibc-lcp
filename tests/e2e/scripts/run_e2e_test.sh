@@ -96,13 +96,12 @@ fi
 
 make -C ${E2E_TEST_DIR} network
 
-echo "wait maxwell to start"
-sleep 2250
 
 E2E_TEST_DIR=${E2E_TEST_DIR} ${E2E_TEST_DIR}/scripts/gen_rly_config.sh
 
 # wait until first finality_update is built
-retry 20 curl -fsL http://localhost:19596/eth/v1/beacon/light_client/finality_update -o /dev/null -w '%{http_code}\n'
+echo "wait maxwell to start"
+sleep 2250
 make -C ${E2E_TEST_DIR} setup handshake
 
 if [ $USE_UPGRADE_TEST = yes ]
