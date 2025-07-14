@@ -423,8 +423,8 @@ github.com/datachainlab/go-risc0-verifier v0.1.1 h1:M+GjE4tcbLAxJGX8oCC70yWv5gSX
 github.com/datachainlab/go-risc0-verifier v0.1.1/go.mod h1:O+uLSIdkN9rvqDXuZCnAOSPf/IT5SVjK/PxxJP3sPPU=
 github.com/datachainlab/ibc-hd-signer v0.1.2 h1:fWAYjMBVyM390OllX/l58mZYA7we0spEBFLYKWYTwfw=
 github.com/datachainlab/ibc-hd-signer v0.1.2/go.mod h1:nwH0Z3TK/7jbu/oInGGWGRimQ+LCn6yvDyjMZrw9mR4=
-github.com/datachainlab/ibc-parlia-relay v0.3.20 h1:LYRViwuk8OV9Mq1f/urSkHXXV9kU625vTD+l2tgzFvA=
-github.com/datachainlab/ibc-parlia-relay v0.3.20/go.mod h1:cD7LUXfUcLSlIz1V5S1g2H1NOaREI+2a9W0m1AS7OiY=
+github.com/datachainlab/ibc-parlia-relay v0.3.21-rc20250714 h1:NDCcDfbTP1mnT8m9yNl5G1JXXMILxdDhe6zVa5PUz7k=
+github.com/datachainlab/ibc-parlia-relay v0.3.21-rc20250714/go.mod h1:cD7LUXfUcLSlIz1V5S1g2H1NOaREI+2a9W0m1AS7OiY=
 github.com/datachainlab/lcp-go v0.2.21 h1:ECMUqlVr0G13BOSC1GvQVWlfbzEgRfSFZzKYss7lNdQ=
 github.com/datachainlab/lcp-go v0.2.21/go.mod h1:3YHfhCywH8SNd6qS3MLgeMMeGJm7l4kfPAEQI0Egf7o=
 github.com/davecgh/go-spew v0.0.0-20171005155431-ecdeabc65495/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
