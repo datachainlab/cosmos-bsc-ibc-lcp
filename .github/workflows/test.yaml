@@ -32,7 +32,8 @@ jobs:
           sudo bash ./lcp/.github/scripts/install_sgx_sdk.sh /opt
       - name: Run E2E test
         run: |
+          docker system prune -a --volumes -f
           source /opt/sgxsdk/environment
           make prepare-contracts
           make build-images
-          make e2e-test
+          make E2E_OPTIONS="--mock_zkdcap" e2e-test
