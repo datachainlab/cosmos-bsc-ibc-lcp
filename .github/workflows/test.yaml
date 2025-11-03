@@ -16,6 +16,9 @@ jobs:
         with:
           submodules: recursive
           fetch-depth: 0
+      - name: Clean up unnecessary packages
+        run: |
+          docker system prune -a --volumes -f
       - uses: actions/setup-go@v5
         with:
           go-version: '1.22'
