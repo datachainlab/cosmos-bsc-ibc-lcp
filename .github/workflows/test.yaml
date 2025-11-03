@@ -19,6 +19,7 @@ jobs:
       - name: Clean up unnecessary packages
         run: |
           sudo rm -rf "/usr/share/dotnet" || true
+          sudo rm -rf "/usr/local/lib/android" || true
           sudo rm -rf "/usr/local/share/boost" || true
       - uses: actions/setup-go@v5
         with:
