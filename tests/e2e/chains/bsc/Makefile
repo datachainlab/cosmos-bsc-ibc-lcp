@@ -12,6 +12,7 @@ bootstrap:
 
 .PHONY:network
 network:
+	$(DOCKER_COMPOSE) up -d autoheal
 	$(DOCKER_COMPOSE) up -d bsc-rpc bsc-validator1-1 bsc-validator1-2 bsc-validator1-3
 
 .PHONY:network-down
@@ -27,7 +28,7 @@ deploy: dep
 
 .PHONY: dep
 dep:
-	$(DOCKER_COMPOSE) run contracts npm install
+	$(DOCKER_COMPOSE) run --rm contracts npm install
 
 .PHONY: clean
 clean:
