@@ -22,7 +22,7 @@ network-down:
 # Contract Deployment
 #------------------------------------------------------------------------------
 .PHONY:deploy
-deploy:
+deploy: dep
 	$(DOCKER_COMPOSE) run -e USE_UPGRADE_TEST=$(USE_UPGRADE_TEST) -e LCP_ENCLAVE_DEBUG=$(LCP_ENCLAVE_DEBUG) -e NO_RUN_LCP=$(NO_RUN_LCP) -e ZKDCAP=$(ZKDCAP) -e LCP_ZKDCAP_RISC0_MOCK=$(LCP_ZKDCAP_RISC0_MOCK) contracts $(HARDHAT) run ./scripts/deploy.js --network eth_local
 
 .PHONY: dep
