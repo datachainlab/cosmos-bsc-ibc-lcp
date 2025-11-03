@@ -18,8 +18,8 @@ jobs:
           fetch-depth: 0
       - name: Clean up unnecessary packages
         run: |
-          sudo rm -rf "/usr/local/lib/android" || true
-          docker system prune -a --volumes -f
+          sudo rm -rf "/usr/share/dotnet" || true
+          sudo rm -rf "/usr/local/share/boost" || true
       - uses: actions/setup-go@v5
         with:
           go-version: '1.22'
