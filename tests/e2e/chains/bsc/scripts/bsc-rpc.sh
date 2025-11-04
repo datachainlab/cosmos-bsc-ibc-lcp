@@ -1,20 +1,21 @@
+#!/usr/bin/env bash
+
 source /scripts/utils.sh
 
 DATA_DIR=/root/.ethereum
 
-wait_for_host_port ${BOOTSTRAP_HOST} ${BOOTSTRAP_TCP_PORT}
-BOOTSTRAP_IP=$(get_host_ip $BOOTSTRAP_HOST)
-VALIDATOR_ADDR=$(cat ${DATA_DIR}/address)
-HOST_IP=$(hostname -i)
+account_cnt=$(ls ${DATA_DIR}/keystore | wc -l)
+i=1
+unlock_sequences="0"
+while [ "$i" -lt ${account_cnt} ]; do
+	unlock_sequences="${unlock_sequences},${i}"
+	i=$((i + 1))
+done
 
-echo "validator id: ${HOST_IP}"
+HOST_IP=$(hostname -i)
 
 ETHSTATS=""
 # Use exec to handle signals
 exec geth --config ${DATA_DIR}/config.toml --datadir ${DATA_DIR} --netrestrict ${CLUSTER_CIDR} \
-	--verbosity ${VERBOSE} --nousb ${ETHSTATS} --state.scheme=hash --db.engine=leveldb \
-	--bootnodes enode://${BOOTSTRAP_PUB_KEY}@${BOOTSTRAP_IP}:${BOOTSTRAP_TCP_PORT} \
-	--mine --miner.etherbase=${VALIDATOR_ADDR} -unlock ${VALIDATOR_ADDR} --password /dev/null --blspassword /scripts/wallet_password.txt \
-	--pprof.addr 0.0.0.0 --metrics \
-	--rpc.allow-unprotected-txs  --history.transactions 15768000 \
-	--pprof --ipcpath /gethipc --vote --override.fixedturnlength 2 --nat extip:${HOST_IP}
+	--state.scheme=hash --db.engine=leveldb --verbosity ${VERBOSE} --nousb ${ETHSTATS} \
+	--unlock ${unlock_sequences} --password /dev/null --ipcpath /gethipc --override.fixedturnlength 2 -nat extip:${HOST_IP}
