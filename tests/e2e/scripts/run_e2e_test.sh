@@ -100,9 +100,8 @@ make -C ${E2E_TEST_DIR} network
 
 E2E_TEST_DIR=${E2E_TEST_DIR} ${E2E_TEST_DIR}/scripts/gen_rly_config.sh
 
-# wait until first finality_update is built
-echo "wait maxwell to start"
-sleep 2250
+# wait 2000 blocks
+sleep 900
 make -C ${E2E_TEST_DIR} setup handshake
 
 if [ $USE_UPGRADE_TEST = yes ]
