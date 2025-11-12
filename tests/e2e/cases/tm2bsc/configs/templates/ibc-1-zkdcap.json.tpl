@@ -35,7 +35,7 @@
     "@type": "/relayer.provers.lcp.config.ProverConfig",
     "origin_prover": {
       "@type": "/relayer.provers.parlia.config.ProverConfig",
-      "trusting_period": "86400s",
+      "trusting_period": "1800s",
       "max_clock_drift": "0",
       "refresh_threshold_rate": {
         "numerator": 1,
