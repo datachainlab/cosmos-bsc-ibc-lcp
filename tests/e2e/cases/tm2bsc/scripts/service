@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -eux
+
+RLY="${RLY_BIN} --debug"
+
+PATH_NAME=ibc01
+
+$RLY service start $PATH_NAME
