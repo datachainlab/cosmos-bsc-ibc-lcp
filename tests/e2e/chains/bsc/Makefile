@@ -12,7 +12,6 @@ bootstrap:
 
 .PHONY:network
 network:
-	$(DOCKER_COMPOSE) up -d autoheal
 	$(DOCKER_COMPOSE) up -d bsc-rpc
 	sleep 5
 	$(DOCKER_COMPOSE) up -d bsc-validator1-1
