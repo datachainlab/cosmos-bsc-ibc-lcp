@@ -104,25 +104,4 @@ E2E_TEST_DIR=${E2E_TEST_DIR} ${E2E_TEST_DIR}/scripts/gen_rly_config.sh
 sleep 900
 make -C ${E2E_TEST_DIR} setup handshake
 
-if [ $USE_UPGRADE_TEST = yes ]
-then
-    make -C ${E2E_TEST_DIR} test-channel-upgrade
-fi
-
-if [ "$NO_RUN_LCP" = "false" ]; then
-    echo "Shutdown LCP for testing restore ELC state"
-    kill $LCP_PID
-    ./tests/e2e/scripts/init_lcp.sh
-    echo "Restart LCP"
-    ${LCP_BIN} --log_level=info service start --enclave=${LCP_ENCLAVE_PATH} --address=127.0.0.1:50051 --threads=2 &
-    LCP_PID=$!
-    echo "Restore ELC state"
-    make -C ${E2E_TEST_DIR} restore
-fi
-
-make -C ${E2E_TEST_DIR} test
-make -C ${E2E_TEST_DIR} test-operators
-make -C ${E2E_TEST_DIR} network-down
-if [ "$NO_RUN_LCP" = false ]; then
-    kill $LCP_PID
-fi
+make -C ${E2E_TEST_DIR} service

@@ -38,7 +38,7 @@ services:
       - bsc-rpc:/root/.ethereum
       - ./scripts:/scripts
       - ./config:/config
-    command: ash /scripts/bsc-rpc.sh
+    command: bash /scripts/bsc-rpc.sh
 
   bsc-validator1-1:
     image: bsc-geth:docker-local
@@ -51,7 +51,7 @@ services:
     volumes:
       - bsc-validator1-1:/root/.ethereum
       - ./scripts:/scripts
-    command: ash /scripts/bsc-validator.sh
+    command: bash /scripts/bsc-validator.sh
 
   bsc-validator1-2:
     image: bsc-geth:docker-local
@@ -64,7 +64,7 @@ services:
     volumes:
       - bsc-validator1-2:/root/.ethereum
       - ./scripts:/scripts
-    command: ash /scripts/bsc-validator.sh
+    command: bash /scripts/bsc-validator.sh
 
   bsc-validator1-3:
     image: bsc-geth:docker-local
@@ -77,8 +77,7 @@ services:
     volumes:
       - bsc-validator1-3:/root/.ethereum
       - ./scripts:/scripts
-    command: ash /scripts/bsc-validator.sh
-
+    command: bash /scripts/bsc-validator.sh
 
   # Deploy contracts via hardhat
   contracts:
