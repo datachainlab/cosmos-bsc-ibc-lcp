@@ -166,11 +166,7 @@ $(LCP_BIN):
 LATEST_HF_TIMESTAMP ?= 0
 
 # The latest HF timestamp for yrly
-ifeq ($(strip $(LATEST_HF_TIMESTAMP)),0)
-    export LOCAL_LATEST_HF_TIMESTAMP := 0
-else ifeq ($(strip $(LATEST_HF_TIMESTAMP)),)
-    export LOCAL_LATEST_HF_TIMESTAMP := 0
-else
+ifneq ($(LATEST_HF_TIMESTAMP),0)
     export LOCAL_LATEST_HF_TIMESTAMP := $(LATEST_HF_TIMESTAMP)000
 endif
 
