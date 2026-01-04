@@ -162,6 +162,18 @@ E2E_OPTIONS=""
 $(LCP_BIN):
 	$(MAKE) -C $(LCP_REPO)
 
+# The latest HF timestamp for genesis.json
+LATEST_HF_TIMESTAMP ?= 0
+
+# The latest HF timestamp for yrly
+ifeq ($(strip $(LATEST_HF_TIMESTAMP)),0)
+    export LOCAL_LATEST_HF_TIMESTAMP := 0
+else ifeq ($(strip $(LATEST_HF_TIMESTAMP)),)
+    export LOCAL_LATEST_HF_TIMESTAMP := 0
+else
+    export LOCAL_LATEST_HF_TIMESTAMP := $(LATEST_HF_TIMESTAMP)000
+endif
+
 .PHONY: prepare-contracts
 prepare-contracts:
 	$(MAKE) -C ./tests/e2e/chains/bsc dep
@@ -172,13 +184,18 @@ build-images:
 	$(MAKE) -C ./tests/e2e/chains/bsc build
 
 .PHONY: e2e-test
-e2e-test: e2e-clean $(LCP_BIN) $(Signed_RustEnclave_Name) yrly
+e2e-test: e2e-clean $(LCP_BIN) $(Signed_RustEnclave_Name) yrly set-hardfork
 	LCP_BIN=$(LCP_BIN) ./tests/e2e/scripts/run_e2e_test.sh $(E2E_OPTIONS)
 
 .PHONY: e2e-service
-e2e-service: e2e-clean $(LCP_BIN) $(Signed_RustEnclave_Name) yrly
+e2e-service: e2e-clean $(LCP_BIN) $(Signed_RustEnclave_Name) yrly set-hardfork
 	LCP_BIN=$(LCP_BIN) ./tests/e2e/scripts/run_service.sh $(E2E_OPTIONS)
 
 .PHONY: e2e-clean
 e2e-clean:
 	$(MAKE) -C ./tests/e2e/chains/bsc rm-oz-upgrades
+
+.PHONY: set-hardfork
+set-hardfork:
+	sed "s/LATEST_HF_TIMESTAMP/$(LATEST_HF_TIMESTAMP)/g" ./tests/e2e/chains/bsc/genesis/original-genesis-template.template > ./tests/e2e/chains/bsc/genesis/genesis-template.template
+	cat ./tests/e2e/chains/bsc/genesis/genesis-template.template
