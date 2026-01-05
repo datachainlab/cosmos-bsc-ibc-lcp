@@ -193,5 +193,5 @@ e2e-clean:
 
 .PHONY: set-hardfork
 set-hardfork:
-	sed "s/LATEST_HF_TIMESTAMP/$(LATEST_HF_TIMESTAMP)/g" ./tests/e2e/chains/bsc/genesis/original-genesis-template.template > ./tests/e2e/chains/bsc/genesis/genesis-template.template
-	cat ./tests/e2e/chains/bsc/genesis/genesis-template.template
+	sed "s/LATEST_HF_TIMESTAMP/$(LATEST_HF_TIMESTAMP)/g" ./tests/e2e/chains/bsc/genesis_source/original-genesis-template.template > ./tests/e2e/chains/bsc/genesis_source/genesis-template.template
+	cat ./tests/e2e/chains/bsc/genesis_source/genesis-template.template
