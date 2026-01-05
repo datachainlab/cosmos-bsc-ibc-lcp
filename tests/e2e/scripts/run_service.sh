@@ -103,4 +103,9 @@ E2E_TEST_DIR=${E2E_TEST_DIR} ${E2E_TEST_DIR}/scripts/gen_rly_config.sh
 sleep 1000
 make -C ${E2E_TEST_DIR} setup handshake
 
-make -C ${E2E_TEST_DIR} service
+if [ "$NO_RUN_YRLY" = "true" ]; then
+  echo "Finish handshake."
+else
+  make -C ${E2E_TEST_DIR} service
+fi
+

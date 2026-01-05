@@ -187,6 +187,14 @@ e2e-test: e2e-clean $(LCP_BIN) $(Signed_RustEnclave_Name) yrly set-hardfork
 e2e-service: e2e-clean $(LCP_BIN) $(Signed_RustEnclave_Name) yrly set-hardfork
 	LCP_BIN=$(LCP_BIN) ./tests/e2e/scripts/run_service.sh $(E2E_OPTIONS)
 
+.PHONY: e2e-handshake
+e2e-handshake: e2e-clean $(LCP_BIN) $(Signed_RustEnclave_Name) yrly set-hardfork
+	NO_RUN_YRLY=true LCP_BIN=$(LCP_BIN) ./tests/e2e/scripts/run_service.sh $(E2E_OPTIONS)
+
+.PHONY: e2e-yrly
+e2e-yrly:
+	$(MAKE) -C ./tests/e2e/cases/tm2op service
+
 .PHONY: e2e-clean
 e2e-clean:
 	$(MAKE) -C ./tests/e2e/chains/bsc rm-oz-upgrades
