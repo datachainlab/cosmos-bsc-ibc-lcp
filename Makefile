@@ -193,7 +193,7 @@ e2e-handshake: e2e-clean $(LCP_BIN) $(Signed_RustEnclave_Name) yrly set-hardfork
 
 .PHONY: e2e-yrly
 e2e-yrly:
-	$(MAKE) -C ./tests/e2e/cases/tm2op service
+	$(MAKE) -C ./tests/e2e/cases/tm2bsc service
 
 .PHONY: e2e-clean
 e2e-clean:
