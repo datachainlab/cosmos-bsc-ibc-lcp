@@ -11,7 +11,7 @@ function prepare() {
     exit 1
   fi
   ls -ltr
-  cp -R ${workspace}/genesis_source/ ${workspace}/genesis/
+  cp -R ${workspace}/genesis_source/. ${workspace}/genesis/
   ls -ltr
   # run `make clean` to remove files
   cd ${workspace}/genesis
