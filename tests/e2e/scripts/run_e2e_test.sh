@@ -102,7 +102,7 @@ E2E_TEST_DIR=${E2E_TEST_DIR} ${E2E_TEST_DIR}/scripts/gen_rly_config.sh
 
 
 if [ -n "$LOCAL_LATEST_HF_TIMESTAMP" ]; then
-    sleep 1800
+    sleep 1600
 else
     sleep 900
 fi

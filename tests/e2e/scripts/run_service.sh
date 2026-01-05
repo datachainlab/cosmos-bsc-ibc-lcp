@@ -103,7 +103,7 @@ E2E_TEST_DIR=${E2E_TEST_DIR} ${E2E_TEST_DIR}/scripts/gen_rly_config.sh
 if [ -n "$LOCAL_LATEST_HF_TIMESTAMP" ]; then
     # block generation time is 0.75
     # remove after fermi HF
-    sleep 1800
+    sleep 1600
 else
     # block generation time is 0.45
     sleep 900
