@@ -107,8 +107,6 @@ else
     sleep 900
 fi
 
-echo "latest hf timestamp ${$LOCAL_LATEST_HF_TIMESTAMP}"
-
 make -C ${E2E_TEST_DIR} setup handshake
 
 if [ $USE_UPGRADE_TEST = yes ]

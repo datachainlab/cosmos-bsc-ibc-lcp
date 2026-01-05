@@ -109,8 +109,6 @@ else
     sleep 900
 fi
 
-echo "latest hf timestamp ${$LOCAL_LATEST_HF_TIMESTAMP}"
-
 make -C ${E2E_TEST_DIR} setup handshake
 
 if [ "$NO_RUN_YRLY" = "true" ]; then
