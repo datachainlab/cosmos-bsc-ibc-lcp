@@ -10,6 +10,7 @@ function prepare() {
     echo "geth do not exist!"
     exit 1
   fi
+  cp -R ${workspace}/genesis_source/. ${workspace}/genesis/
   # run `make clean` to remove files
   cd ${workspace}/genesis
   rm -rf validators.conf

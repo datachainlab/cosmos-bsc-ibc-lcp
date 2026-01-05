@@ -100,8 +100,13 @@ make -C ${E2E_TEST_DIR} network
 
 E2E_TEST_DIR=${E2E_TEST_DIR} ${E2E_TEST_DIR}/scripts/gen_rly_config.sh
 
-# wait 2000 blocks
-sleep 900
+
+if [ -n "$LOCAL_LATEST_HF_TIMESTAMP" ]; then
+    sleep 1600
+else
+    sleep 900
+fi
+
 make -C ${E2E_TEST_DIR} setup handshake
 
 if [ $USE_UPGRADE_TEST = yes ]

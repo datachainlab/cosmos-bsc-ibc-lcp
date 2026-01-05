@@ -19,6 +19,7 @@ services:
       - bsc-validator1-1:/root/storage/bsc-validator1
       - bsc-validator1-2:/root/storage/bsc-validator2
       - bsc-validator1-3:/root/storage/bsc-validator3
+      - ./genesis_source:/root/genesis_source
       - ./scripts:/root/scripts
       - ./config:/root/config
       - ./init-holders:/root/init-holders

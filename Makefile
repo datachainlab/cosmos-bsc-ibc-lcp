@@ -151,7 +151,7 @@ fmt:
 
 .PHONY: yrly
 yrly:
-	go build -ldflags="-X github.com/datachainlab/ibc-parlia-relay/module/constant.blocksPerEpoch=20" -o ./bin/yrly -tags "dev customcert" ./relayer
+	go build -o ./bin/yrly -tags "dev customcert" ./relayer
 
 ######## E2E test ########
 LCP_REPO=./lcp
@@ -161,6 +161,14 @@ E2E_OPTIONS=""
 
 $(LCP_BIN):
 	$(MAKE) -C $(LCP_REPO)
+
+# The latest HF timestamp for genesis.json
+LATEST_HF_TIMESTAMP ?= 0
+
+# The latest HF timestamp for yrly
+ifneq ($(LATEST_HF_TIMESTAMP),0)
+    export LOCAL_LATEST_HF_TIMESTAMP := $(LATEST_HF_TIMESTAMP)000
+endif
 
 .PHONY: prepare-contracts
 prepare-contracts:
@@ -172,13 +180,26 @@ build-images:
 	$(MAKE) -C ./tests/e2e/chains/bsc build
 
 .PHONY: e2e-test
-e2e-test: e2e-clean $(LCP_BIN) $(Signed_RustEnclave_Name) yrly
+e2e-test: e2e-clean $(LCP_BIN) $(Signed_RustEnclave_Name) yrly set-hardfork
 	LCP_BIN=$(LCP_BIN) ./tests/e2e/scripts/run_e2e_test.sh $(E2E_OPTIONS)
 
 .PHONY: e2e-service
-e2e-service: e2e-clean $(LCP_BIN) $(Signed_RustEnclave_Name) yrly
+e2e-service: e2e-clean $(LCP_BIN) $(Signed_RustEnclave_Name) yrly set-hardfork
 	LCP_BIN=$(LCP_BIN) ./tests/e2e/scripts/run_service.sh $(E2E_OPTIONS)
+
+.PHONY: e2e-handshake
+e2e-handshake: e2e-clean $(LCP_BIN) $(Signed_RustEnclave_Name) yrly set-hardfork
+	NO_RUN_YRLY=true LCP_BIN=$(LCP_BIN) ./tests/e2e/scripts/run_service.sh $(E2E_OPTIONS)
+
+.PHONY: e2e-yrly
+e2e-yrly:
+	$(MAKE) -C ./tests/e2e/cases/tm2bsc service
 
 .PHONY: e2e-clean
 e2e-clean:
 	$(MAKE) -C ./tests/e2e/chains/bsc rm-oz-upgrades
+
+.PHONY: set-hardfork
+set-hardfork:
+	sed "s/LATEST_HF_TIMESTAMP/$(LATEST_HF_TIMESTAMP)/g" ./tests/e2e/chains/bsc/genesis_source/original-genesis-template.template > ./tests/e2e/chains/bsc/genesis_source/genesis-template.template
+	cat ./tests/e2e/chains/bsc/genesis_source/genesis-template.template

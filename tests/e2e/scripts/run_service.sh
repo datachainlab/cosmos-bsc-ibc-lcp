@@ -100,8 +100,20 @@ make -C ${E2E_TEST_DIR} network
 
 E2E_TEST_DIR=${E2E_TEST_DIR} ${E2E_TEST_DIR}/scripts/gen_rly_config.sh
 
-# wait 2000 blocks
-sleep 900
+if [ -n "$LOCAL_LATEST_HF_TIMESTAMP" ]; then
+    # block generation time is 0.75
+    # remove after fermi HF
+    sleep 1600
+else
+    # block generation time is 0.45
+    sleep 900
+fi
+
 make -C ${E2E_TEST_DIR} setup handshake
 
-make -C ${E2E_TEST_DIR} service
+if [ "$NO_RUN_YRLY" = "true" ]; then
+  echo "Finish handshake."
+else
+  make -C ${E2E_TEST_DIR} service
+fi
+
