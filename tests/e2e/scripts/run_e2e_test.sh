@@ -127,6 +127,7 @@ fi
 
 make -C ${E2E_TEST_DIR} test
 make -C ${E2E_TEST_DIR} test-operators
+make -C ${E2E_TEST_DIR} test-timeout
 make -C ${E2E_TEST_DIR} network-down
 if [ "$NO_RUN_LCP" = false ]; then
     kill $LCP_PID

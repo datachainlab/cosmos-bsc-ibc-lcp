@@ -42,3 +42,7 @@ restore:
 .PHONY: test-operators
 test-operators:
 	RLY_BIN=$(RLY_BIN) ./scripts/test-operators
+
+.PHONY: test-timeout
+test-timeout:
+	RLY_BIN=$(RLY_BIN) ./scripts/test-tx-timeout
