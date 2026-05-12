@@ -36,7 +36,7 @@
     "origin_prover": {
       "@type": "/relayer.provers.parlia.config.ProverConfig",
       "trusting_period": "1800s",
-      "max_clock_drift": "0",
+      "max_clock_drift": "5s",
       "refresh_threshold_rate": {
         "numerator": 1,
         "denominator": 2
