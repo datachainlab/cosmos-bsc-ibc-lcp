@@ -9,8 +9,8 @@ This is a cross-chain messaging demo between Cosmos and BSC using IBC and LCP (L
 - [lcp-solidity v0.2.1](https://github.com/datachainlab/lcp-solidity/releases/tag/v0.2.1)
 - [yui-relayer v0.5.16](https://github.com/hyperledger-labs/yui-relayer/releases/tag/v0.5.16)
 - [ethereum-ibc-relay-chain v0.3.18](https://github.com/datachainlab/ethereum-ibc-relay-chain/releases/tag/v0.3.18)
-- [parlia-elc v0.3.10](https://github.com/datachainlab/parlia-elc/releases/tag/v0.3.10)
-- [ibc-parlia-relay v0.3.21](https://github.com/datachainlab/ibc-parlia-relay/releases/tag/v0.3.21)
+- [parlia-elc v0.4.1](https://github.com/datachainlab/parlia-elc/releases/tag/v0.4.1)
+- [ibc-parlia-relay v0.4.0](https://github.com/datachainlab/ibc-parlia-relay/releases/tag/v0.4.0)
 
 ## Pre-requisites
 
